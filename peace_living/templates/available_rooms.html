@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available Rooms</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+    <h2>Available Rooms for Student {{ student_id }}</h2>
+
+    {% if matches %}
+        <ul>
+        {% for room in matches %}
+            <li>Building {{ room[0] }} – Room {{ room[1] }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No rooms found that match the student's preferences.</p>
+    {% endif %}
+
+    <!-- Navigation buttons -->
+    <p>
+        <a href="{{ url_for('roommate_matches', student_id=student_id) }}">Find Roommate Matches</a> |
+        <a href="{{ url_for('select_student') }}">Select a Different Student</a> |
+        <a href="{{ url_for('home') }}">← Back to Home</a>
+    </p>
+</div>
+</body>
+</html>

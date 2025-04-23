@@ -1,0 +1,148 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-image: url('/static/dorm.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    margin: 60px auto 20px;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+h1, h2 {
+    color: #2C3E50;
+    font-weight: bold;
+}
+
+.tagline {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4A5E68;
+    margin-top: -10px;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.nav {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn, button {
+    background-color: #5D737E;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    font-size: 15px;
+}
+
+.btn:hover, button:hover {
+    background-color: #4A5E68;
+    transform: scale(1.05);
+}
+
+a.btn {
+    display: inline-block;
+    text-align: center;
+}
+
+form input[type="text"], select {
+    width: 60%;
+    padding: 10px;
+    margin: 10px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+label {
+    display: block;
+    margin: 6px 0;
+    font-weight: 500;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #bbb;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #5D737E;
+    color: white;
+}
+
+footer-gallery {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    gap: 16px;
+    padding: 16px 8px;
+    margin-top: 16px;
+    scroll-behavior: smooth;
+}
+
+.footer-gallery img {
+    height: 120px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.footer-gallery img:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    text-align: center;
+    padding: 24px;
+    margin-top: auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-top: 1px solid #ccc;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+footer a {
+    color: #5D737E;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

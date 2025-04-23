@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Student</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 40px;
+            background: url('/static/dorm.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #2C3E50;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 500px;
+            margin: 60px auto;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        select, button {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .nav-link {
+            margin-top: 20px;
+            display: inline-block;
+            font-weight: bold;
+            color: #2C3E50;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Select a Student</h2>
+        <form onsubmit="return goToPage();">
+            <label for="student_id">Student:</label>
+            <select id="student_id"required>
+                {% for student in students %}
+                    <option value="{{ student[0] }}">{{ student[1] }} (ID: {{ student[0] }})</option>
+                {% endfor %}
+            </select>
+            <br>
+            <button type="submit" onclick="setDestination('roommate_matches')">Roommate Matches</button>
+            <button type="submit" onclick="setDestination('available_rooms')">Available Rooms</button>
+        </form>
+
+        <a href="{{ url_for('home') }}" class="nav-link">← Back to Home</a>
+    </div>
+
+    <script>
+        let destination = "";
+
+        function setDestination(route) {
+            destination = route;
+        }
+
+        function goToPage() {
+            const id = document.getElementById("student_id").value;
+            if (destination && id) {
+                window.location.href = `/${destination}/${id}`;
+            }
+            return false; // prevent actual form submission
+        }
+    </script>
+</body>
+</html>

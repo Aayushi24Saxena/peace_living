@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head><title>Add Assignment</title><link rel="stylesheet" href="/static/style.css"></head>
+<body>
+<div class="container">
+    <h2>Assign Room</h2>
+    <form method="post">
+        <label>Student:</label>
+        <select name="student">
+            {% for s in students %}<option value="{{ s[0] }}">{{ s[1] }}</option>{% endfor %}
+        </select><br>
+        <label>Building:</label>
+        <select name="building">
+            {% for r in rooms %}<option value="{{ r[0] }}">{{ r[0] }}</option>{% endfor %}
+        </select>
+        <label>Room Number:</label>
+        <select name="room">
+            {% for r in rooms %}<option value="{{ r[1] }}">{{ r[1] }}</option>{% endfor %}
+        </select><br>
+        <button type="submit" class="btn">Assign</button>
+    </form>
+    <a href="/" class="btn">Back to Home</a>
+</div>
+</body>
+</html>
