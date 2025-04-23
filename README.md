@@ -1,2 +1,2 @@
 # peace_living
-Peace Living Dorm Assignment Web App
+ Dorm Assignment Web App
